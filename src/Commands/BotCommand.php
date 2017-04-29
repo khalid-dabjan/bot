@@ -1,7 +1,8 @@
 <?php
 
-namespace app\Commands;
+namespace App\Commands;
 
+use App\Core\Bot;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -27,6 +28,10 @@ class BotCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln($input->getArguments('direction'));
+//        $output->writeln($input->getArguments('direction'));
+        $bot = new Bot();
+        $bot->move($input->getArgument('direction'));
+        $output->writeln($bot->getPosition());
+
     }
 }
