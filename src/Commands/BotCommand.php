@@ -28,7 +28,6 @@ class BotCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-//        $output->writeln($input->getArguments('direction'));
         $bot = new Bot();
         $bot->move($input->getArgument('direction'));
         $output->writeln($bot->getPosition());
