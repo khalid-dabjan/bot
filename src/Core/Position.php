@@ -79,7 +79,6 @@ class Position
     {
         $functionName = $this->getTurnFunctionName($to);
         $this->$functionName();
-        return $this;
     }
 
     /**

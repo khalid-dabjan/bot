@@ -59,6 +59,25 @@ class BotTest extends TestCase
     }
 
     /** @test */
+    public function it_can_face_south()
+    {
+        $this->bot
+            ->turnLeft()
+            ->turnLeft();
+        $this->assertEquals('s', $this->bot->getDirection());
+    }
+
+    /** @test */
+    public function it_can_face_west()
+    {
+        $this->bot
+            ->turnRight()
+            ->turnRight()
+            ->turnRight();
+        $this->assertEquals('w', $this->bot->getDirection());
+    }
+
+    /** @test */
     public function it_moves()
     {
         $command = 'RW15RW1';

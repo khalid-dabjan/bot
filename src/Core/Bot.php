@@ -37,7 +37,7 @@ class Bot
      * Turn the bot clockwise.
      * @return $this
      */
-    protected function turnRight()
+    public function turnRight()
     {
         $this->position->turn('right');
         return $this;
@@ -47,7 +47,7 @@ class Bot
      * Turn the bot anticlockwise.
      * @return $this
      */
-    protected function turnLeft()
+    public function turnLeft()
     {
         $this->position->turn('left');
         return $this;
@@ -60,7 +60,7 @@ class Bot
      * @param int $steps
      * @return $this
      */
-    protected function walk($steps = 1)
+    public function walk($steps = 1)
     {
         $this->position->walk($steps);
         return $this;
@@ -126,7 +126,7 @@ class Bot
                      * a valid number of steps, it must be a numeric value, the
                      * methods array must not be empty, and the last command that
                      * was pushed into the methods array must be a walk command.
-                     * Anything other that means that the command string is not
+                     * Anything other than that means that the command string is not
                      * formatted correctly, so we throw an exception and terminate.
                      */
                     $lastMethodIndex = count($methods) - 1;
